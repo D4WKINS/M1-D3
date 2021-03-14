@@ -60,22 +60,22 @@ You are working on an e-commerce website. In the variable totalShoppingCart you 
 Currently you have a promotion: if the customer's shopping cart total is more than 50, the user is eligible for free shipping (otherwise it costs 10).
 Write an algorithm that calculates the total cost to charge the user with.
 */
-    // let shippingCost;
-    // let totalShoppingCart = 55
-    // shippingCost = totalShoppingCart > 50 ? "free" : shippingCost = 10;
-    // console.log(shippingCost)
+   
+    // let totalShoppingCart = 40
+    // const shippingCost = totalShoppingCart > 50 ? 0 : 10;
+    // console.log(shippingCost + totalShoppingCart)
 
 /* EXERCISE 7
 You are working on an e-commerce website. Today is Black Friday and everything has a 20% discount at the end of the purchase.
 Modify the previous answer inserting this information and, applying the same rules for the shipping cost, calculate the totalCost.
 */
 
-
-let shippingCost;
-    let totalShoppingCart = 55
-    shippingCost = totalShoppingCart > 50 ? "free" : shippingCost = 10;
-    totalShoppingCart = (totalShoppingCart+shippingCost)*0.2;
-    console.log(totalShoppingCart)
+//THIS DOSENT WORK FIX IT ,FEELIX
+// let shippingCost;
+//     let totalShoppingCart = 55
+//     shippingCost = totalShoppingCart > 50 ? "free" : shippingCost = 10;
+//     totalShoppingCart = (totalShoppingCart+shippingCost)*0.2;
+//     console.log(totalShoppingCart)
 
 //WRONG
 
@@ -83,38 +83,40 @@ let shippingCost;
 Create an object representing a car with properties like brand, model, licensePlate.
 After you create the first car, clone it 5 times and change the licensePlate for each cloned car without affecting the original one.
 */
+    let car1 = {
+        licensePlate: "T00 S10W",
+        brand: "Vauxhall",
+        model:"Corsa"
+    }
 
-    // let car1 = {
-    //     licensePlate: "T00 S10W",
-    //     brand: "Vauxhall",
-    //     model:"Corsa"
-    // }
-
-   
+    let car2 = {...car1, licensePlate: "1MTH3 M4N" }
     // let car2 =  Object.assign({licensePlate: "1MTH3 M4N" }, {brand: "Vauxhall", model:"Corsa" })
-    // let car3 =  Object.assign({licensePlate: "C0ME ATM3"}, {brand: "Vauxhall", model:"Corsa" })
-    // let car4 =  Object.assign({licensePlate: "BR0 C0D3"}, {brand: "Vauxhall", model:"Corsa" })
-    // let car5 =  Object.assign({licensePlate: "5T4Y H4RD"}, {brand: "Vauxhall", model:"Corsa" })
+    let car3 =  Object.assign({licensePlate: "C0ME ATM3"}, {brand: "Vauxhall", model:"Corsa" }) //object.assign(transfers keys in the right object to the left object)
+    let car4 =  Object.assign({licensePlate: "BR0 C0D3"}, {brand: "Vauxhall", model:"Corsa" })
+    let car5 =  Object.assign({licensePlate: "5T4Y H4RD"}, {brand: "Vauxhall", model:"Corsa" })
 
-    /*
-      let myCar2 = {...myCar1} is the same as
-        let myCar2 = {}
-        myCar2 = Object.assign({}, myCar1)
- */
+    // Spread operator expands an array inside another
+    //   let myCar2 = {...myCar1} is the same as
+    //     let myCar2 = {}
+    //     myCar2 = Object.assign({}, myCar1)
+ 
 
       
 /* EXERCISE 9
 Create a new array called carsForRent containing all the cars from the previous exercise.
 */
-    // const carsForRent = [];
 
-    // carsForRent.push(car1)
-    // carsForRent.push(car2)
-    // carsForRent.push(car3)
-    // carsForRent.push(car4)
-    // carsForRent.push(car5)
+    //UPDATE USING A FOR LOOP
+    
+    const carsForRent = [];
 
-    // console.log(carsForRent)
+    carsForRent.push(car1)
+    carsForRent.push(car2)
+    carsForRent.push(car3)
+    carsForRent.push(car4)
+    carsForRent.push(car5)
+
+    console.log(carsForRent)
 
 
 
@@ -122,8 +124,10 @@ Create a new array called carsForRent containing all the cars from the previous 
 Remove the first and the last car from the carsForRent array.
 */
 
-    // carsForRent.pop()
-    // carsForRent.shift()
+//UPDATE USING .Splice() METHOD
+
+
+    // carsForRent.splice(-1,2)
     // console.log(carsForRent)
 
 
@@ -132,22 +136,27 @@ Remove the first and the last car from the carsForRent array.
 Print in the console the TYPES of the car variable, of its licensePlate and of the its brand properties.
 */
 
-    // for(let key in car1){
-    //     console.log(typeof(key))
-    // }
+// console.log(car1.brand,car1.model, car1.licensePlate)
 
 /* EXERCISE 12
 Create a new array called carsForSale and insert 3 cars in it.
 Store in a variable totalCars the number of cars present in both carsForSale and carsForRent arrays.
 */
 
-    // const carsForSale =[]
-    // carsForSale.push(car1)
-    // carsForSale.push(car5)
-    // console.log(carsForSale)
+    const carsForSale =[]
+    carsForSale.push(car1)
+    carsForSale.push(car5)
+    console.log(carsForSale)
 
-    // let totalCars = carsForSale.length + carsForRent.length;
-    // console.log(totalCars)
+    let totalCars = carsForSale.length + carsForRent.length;
+    console.log(totalCars)
+
+    //Another Way
+//     let carsForSale = [car1,car5, car2]
+// let totalCars = {
+//     carsForSale: carsForSale.length,
+//     carsForRent: carsForRent.length
+// }
 
 
 
@@ -160,6 +169,11 @@ Print in the console the data from each car in the carsForSale array.
     //     sellCarData = Object.values(sellCarData)
     //     console.log(sellCarData)
     // }
+
+
+// console.log(carsForSale[0].licensePlate)
+// console.log(carsForSale[1].licensePlate)
+// console.log(carsForSale[2].licensePlate)
 
 /* WHEN YOU ARE FINISHED
 Send the code on the Eduflow platform. In the next days we'll also learn how to use GIT
