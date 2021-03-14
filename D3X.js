@@ -75,17 +75,16 @@ Write the code to delete even entries from an array.
     for(let i=0; i < arr2.length; i++){
 
         if(arr2[i] % 2 === 0){
-
-            
+            arr2.splice([i],1)
         }
-
-    }
+    }    console.log(arr2)
 
 /* EXERCISE 6
 Write the code to remove all the vowels from a string.
 */
 
-/* WRITE YOUR CODE HERE */
+
+
 
 /* EXERCISE 7
 Write the code to increase all the numeric values in a array by 1.
