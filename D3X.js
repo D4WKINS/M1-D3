@@ -83,22 +83,37 @@ Write the code to delete even entries from an array.
 Write the code to remove all the vowels from a string.
 */
 
+        let str = "I want to be an average developer!"
+
+        console.log(str.replace("average","expert"))
+
+     
 
 
 
 /* EXERCISE 7
 Write the code to increase all the numeric values in a array by 1.
 */
-  
 
+        for(let i =0; i<arr2.length; i++){
+            arr2[i] = arr2[i]+1
+        }
+        console.log(arr2)
+    
 
 /* EXERCISE 8 
 Replace all the strings in an array with their length.
 es.: ["strive", "is", "great"] => [6, 2, 5]
 */
 
-/* WRITE YOUR CODE HERE */
-
-/* WHEN YOU ARE FINISHED
-Send the code on the Eduflow platform. In the next days we'll also learn how to use GIT
-*/
+      
+    const convertStrings = function(){
+        let strings = ["We","Live", "And", "We", "Learn"]
+        for(let i = 0; i < strings.length; i++){
+            strings = strings[i].replace(strings[i], strings[i].length)
+            
+        }
+    }
+    console.log(convertStrings())
+        
+         
