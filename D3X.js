@@ -109,10 +109,11 @@ es.: ["strive", "is", "great"] => [6, 2, 5]
       
     const convertStrings = function(){
         let strings = ["We","Live", "And", "We", "Learn"]
+        let lengthOfStrings = []
         for(let i = 0; i < strings.length; i++){
-            strings = strings[i].replace(strings[i], strings[i].length)
-            
+            lengthOfStrings.push(strings[i].replace(strings[i], strings[i].length))// replaces 1st paremeter value with 2nd parameter value
         }
+        return lengthOfStrings
     }
     console.log(convertStrings())
         
